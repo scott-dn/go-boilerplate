@@ -4,10 +4,16 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/golang-jwt/jwt/v5"
 	"github.com/labstack/echo/v4"
 	"github.com/scott-dn/go-boilerplate/internal/app"
 	"github.com/scott-dn/go-boilerplate/internal/request"
 )
+
+type jwtCustomClaims struct {
+	Email string `json:"email"`
+	jwt.RegisteredClaims
+}
 
 func registerRoutes(group *echo.Group, app *app.App) {
 	// enforce authentication for all routes in this group
