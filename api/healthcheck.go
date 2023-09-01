@@ -15,7 +15,7 @@ func newHealthCheckService() *healthcheck {
 	return &healthcheck{}
 }
 
-func (h *healthcheck) Close() {
+func (h *healthcheck) close() {
 	h.isClosing = true
 }
 
