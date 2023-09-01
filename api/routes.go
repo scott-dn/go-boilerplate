@@ -77,7 +77,7 @@ func addBook(app *app.App) echo.HandlerFunc {
 			return err
 		}
 		c.Set("body", &req)
-		return c.JSON(http.StatusCreated, app.Service.Book.AddBook(&req, c.Get("email").(string))) //nolint:forcetypeassert
+		return c.JSON(http.StatusCreated, app.Service.Book.AddBook(&req, c.Get("email").(string)))
 	}
 }
 
