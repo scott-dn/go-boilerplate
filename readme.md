@@ -81,7 +81,7 @@ $ curl localhost:8080/... -H 'authorization: Bearer ...'
 ❗️Please do this before raise the PRs ❗️
 
 ```bash
-$ golangci-lint run --fix
+$ make lint
 ```
 
 #### DAO Interface generation
@@ -114,5 +114,5 @@ $ migrate -source file://migrations -database 'postgres://service:password@local
 # make sure you have dependencies up
 $ docker compose up -d
 
-$ go test ./test -v -count=1
+$ make test
 ```
