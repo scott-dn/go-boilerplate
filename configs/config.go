@@ -6,8 +6,9 @@ import (
 
 type Config struct {
 	GoENV    string
-	HttpPort uint
+	HTTPPort uint
 	PgDbURL  string
+	CORS     []string // whitelist
 }
 
 func NewConfig() *Config {
