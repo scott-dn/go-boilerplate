@@ -1,0 +1,173 @@
+basePath: /service/api/v1/
+definitions:
+  entities.Book:
+    properties:
+      author:
+        type: string
+      createdAt:
+        type: string
+      createdBy:
+        type: string
+      description:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      updatedAt:
+        type: string
+      updatedBy:
+        type: string
+      version:
+        type: integer
+    type: object
+  request.AddBook:
+    properties:
+      author:
+        type: string
+      description:
+        type: string
+      name:
+        type: string
+    required:
+    - author
+    - description
+    - name
+    type: object
+  request.UpdateBook:
+    properties:
+      author:
+        type: string
+      description:
+        type: string
+      name:
+        type: string
+      version:
+        type: integer
+    required:
+    - author
+    - description
+    - name
+    - version
+    type: object
+  response.Book:
+    properties:
+      data:
+        $ref: '#/definitions/entities.Book'
+    type: object
+  response.Books:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/entities.Book'
+        type: array
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: This is a service
+  title: Service API
+  version: "1.0"
+paths:
+  /books:
+    get:
+      description: Get all books
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Books'
+      security:
+      - ApiKeyAuth: []
+      summary: Get all books
+      tags:
+      - books
+    post:
+      description: Create book
+      parameters:
+      - description: request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/request.AddBook'
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Book'
+      security:
+      - ApiKeyAuth: []
+      summary: Create book
+      tags:
+      - books
+  /books/{bookId}:
+    delete:
+      description: Delete book
+      parameters:
+      - description: book id
+        in: path
+        name: bookId
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Book'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete book
+      tags:
+      - books
+    get:
+      description: Get book by id
+      parameters:
+      - description: book id
+        in: path
+        name: bookId
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Book'
+      security:
+      - ApiKeyAuth: []
+      summary: Get book by id
+      tags:
+      - books
+    put:
+      description: Update book
+      parameters:
+      - description: book id
+        in: path
+        name: bookId
+        required: true
+        type: string
+      - description: request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/request.UpdateBook'
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Book'
+      security:
+      - ApiKeyAuth: []
+      summary: Update book
+      tags:
+      - books
+schemes:
+- http
+securityDefinitions:
+  ApiKeyAuth:
+    description: Enter your token.
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
