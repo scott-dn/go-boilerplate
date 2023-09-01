@@ -5,10 +5,11 @@ import (
 )
 
 type Config struct {
-	GoENV    string
-	HTTPPort uint
-	PgDbURL  string
-	CORS     []string // whitelist
+	GoENV     string
+	HTTPPort  uint
+	PgDbURL   string
+	JwtSecret []byte
+	CORS      []string // whitelist
 }
 
 func NewConfig() *Config {
