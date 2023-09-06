@@ -24,10 +24,13 @@ definitions:
   request.AddBook:
     properties:
       author:
+        maxLength: 255
         type: string
       description:
+        maxLength: 5000
         type: string
       name:
+        maxLength: 255
         type: string
     required:
     - author
@@ -37,10 +40,13 @@ definitions:
   request.UpdateBook:
     properties:
       author:
+        maxLength: 255
         type: string
       description:
+        maxLength: 5000
         type: string
       name:
+        maxLength: 255
         type: string
       version:
         type: integer
@@ -92,8 +98,8 @@ paths:
         schema:
           $ref: '#/definitions/request.AddBook'
       responses:
-        "200":
-          description: OK
+        "201":
+          description: Created
           schema:
             $ref: '#/definitions/response.Book'
       security:

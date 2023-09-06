@@ -4,7 +4,7 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/scott-dn/go-boilerplate/configs"
 	"github.com/scott-dn/go-boilerplate/internal/database"
-	"github.com/scott-dn/go-boilerplate/internal/pkg/logger"
+	"github.com/scott-dn/go-boilerplate/internal/logger"
 	"github.com/scott-dn/go-boilerplate/internal/service"
 	"gorm.io/gorm"
 )
@@ -34,12 +34,6 @@ func (app *App) HealthCheck() error {
 		log.Error().Err(err).Msg("database health check failed")
 		return err
 	}
-	/*
-	 * if err := app.Cache.Ping(); err != nil {
-	 *   log.Error().Err(err).Msg("cache health check failed")
-	 *   return err
-	 * }
-	 */
 	return nil
 }
 

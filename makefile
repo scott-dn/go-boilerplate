@@ -1,9 +1,13 @@
-.PHONY: build docker lint test
+.PHONY: build gen docker lint test
 
 VERSION=$(shell git rev-parse --short HEAD)
 
 build:
 	go build -v ./...
+
+gen:
+	go run ./cmd/gen/main.go
+	swag init -d api,internal/request,internal/response,internal/database/entities -o ./api/docs -g ./http.go
 
 docker:
 	docker build -t service:$(VERSION) .

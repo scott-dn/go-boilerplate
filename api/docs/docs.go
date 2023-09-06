@@ -59,8 +59,8 @@ const docTemplate = `{
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "OK",
+                    "201": {
+                        "description": "Created",
                         "schema": {
                             "$ref": "#/definitions/response.Book"
                         }
@@ -209,13 +209,16 @@ const docTemplate = `{
             ],
             "properties": {
                 "author": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 255
                 },
                 "description": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 5000
                 },
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 255
                 }
             }
         },
@@ -229,13 +232,16 @@ const docTemplate = `{
             ],
             "properties": {
                 "author": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 255
                 },
                 "description": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 5000
                 },
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 255
                 },
                 "version": {
                     "type": "integer"

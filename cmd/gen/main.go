@@ -7,7 +7,7 @@ import (
 	"github.com/rs/zerolog/log"
 	"github.com/scott-dn/go-boilerplate/configs"
 	"github.com/scott-dn/go-boilerplate/internal/database/entities"
-	"github.com/scott-dn/go-boilerplate/internal/pkg/logger"
+	"github.com/scott-dn/go-boilerplate/internal/logger"
 	"gorm.io/driver/postgres"
 	"gorm.io/gen"
 	"gorm.io/gorm"
@@ -33,7 +33,7 @@ func main() {
 	}
 
 	generator := gen.NewGenerator(gen.Config{
-		OutPath:           filepath.Join(cwd, "internal/pkg/database/query"),
+		OutPath:           filepath.Join(cwd, "internal/database/query"),
 		OutFile:           "gen.go",
 		ModelPkgPath:      "query",
 		WithUnitTest:      false,

@@ -9,7 +9,7 @@ import (
 	"testing"
 
 	"github.com/scott-dn/go-boilerplate/internal/database/entities"
-	"github.com/scott-dn/go-boilerplate/internal/pkg/database/query"
+	"github.com/scott-dn/go-boilerplate/internal/database/query"
 	"github.com/scott-dn/go-boilerplate/internal/response"
 )
 

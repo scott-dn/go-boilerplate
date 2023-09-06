@@ -3,7 +3,7 @@ package database
 import (
 	"github.com/rs/zerolog/log"
 	"github.com/scott-dn/go-boilerplate/configs"
-	"github.com/scott-dn/go-boilerplate/internal/pkg/database/query"
+	"github.com/scott-dn/go-boilerplate/internal/database/query"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )

@@ -56,8 +56,8 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "OK",
+                    "201": {
+                        "description": "Created",
                         "schema": {
                             "$ref": "#/definitions/response.Book"
                         }
@@ -206,13 +206,16 @@
             ],
             "properties": {
                 "author": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 255
                 },
                 "description": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 5000
                 },
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 255
                 }
             }
         },
@@ -226,13 +229,16 @@
             ],
             "properties": {
                 "author": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 255
                 },
                 "description": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 5000
                 },
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": 255
                 },
                 "version": {
                     "type": "integer"

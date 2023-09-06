@@ -6,7 +6,7 @@ import (
 
 	"github.com/labstack/echo/v4"
 	"github.com/scott-dn/go-boilerplate/internal/database/entities"
-	"github.com/scott-dn/go-boilerplate/internal/pkg/database/query"
+	"github.com/scott-dn/go-boilerplate/internal/database/query"
 	"github.com/scott-dn/go-boilerplate/internal/request"
 	"github.com/scott-dn/go-boilerplate/internal/response"
 	"gorm.io/gorm"
