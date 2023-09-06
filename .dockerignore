@@ -1,6 +1,9 @@
 data
+test
 tmp
 .*
+*.out
 docker*
 LICENSE
+makefile
 readme.md
